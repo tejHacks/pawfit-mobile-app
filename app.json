@@ -1,0 +1,43 @@
+{
+  "expo": {
+    "name": "PawFit",
+    "slug": "pawfit",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "pawfit",
+    "userInterfaceStyle": "automatic",
+    "ios": {
+      "bundleIdentifier": "com.olateju.pawfit",
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.olateju.pawfit",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/icon.png",
+        "backgroundColor": "#0D9488"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "output": "single",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#0D9488",
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 160
+        }
+      ],
+      "expo-localization"
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    }
+  }
+}
