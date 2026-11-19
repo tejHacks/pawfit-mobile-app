@@ -1,11 +1,18 @@
-import { router } from 'expo-router';
+import { router, Redirect } from 'expo-router';
 import { Text, View } from 'react-native';
 
 import { Body, Button, Card, H2, Row, Screen } from '@/components/ui';
 import { dailyTarget, stageLabel, today, useFood, usePets } from '@/data/pets';
+import { useStoredState } from '@/lib/storage';
 import { usePalette } from '@/theme';
 
 export default function Home() {
+  const [onboarded, , onboardedReady] = useStoredState('onboarded', false);
+  if (onboardedReady && !onboarded) return <Redirect href="/onboarding" />;
+  return <HomeScreen />;
+}
+
+function HomeScreen() {
   const c = usePalette();
   const [pets] = usePets();
   const [food] = useFood();
